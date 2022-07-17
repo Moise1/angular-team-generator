@@ -11,5 +11,10 @@ export class AppComponent {
 
   addMember(){ 
     this.members.push(this.newMemberName);
+    this.newMemberName = '';
+  };
+
+  onChange(member: string){
+    this.newMemberName = member;
   }
 }

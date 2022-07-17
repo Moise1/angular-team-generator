@@ -16,12 +16,8 @@
     overflow: auto;
   }
   
-  .add-members-container input {
-    border: none;
-    border-bottom: 0.1rem solid rgba(128, 128, 128, 0.418);
-    margin-right: 0.5rem;
-    width: 100%; 
-    display: flex;
+  .add-members-container .ui.input {
+    width: 100% !important; 
   }
   
   .add-members-container button {

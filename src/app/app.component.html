@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Generator App</title>
-</head>
-<body>
-  <div class="container">
-    <div class="ui card">
-      <h1>Team Generator</h1>
-      <ul class="list">
-        <li>Name 1</li>
-        <li>Name 2</li>
-        <li>Name 3</li>
-      </ul>
-      <form action="" class="add-members-container">
-        <input type="text" placeholder="Name...">
-        <button (click)="addMember()">Add</button>
-      </form>
-  
-      <div class="generate-teams-container">
-        <input type="text" placeholder="# of teams">
-        <button>Generate</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Generator App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ui card">
+        <h1>Team Generator</h1>
+        <ul class="list">
+          <li *ngFor="let member of members">{{ member }}</li>
+        </ul>
+        <div class="add-members-container">
+          <div class="ui input">
+            <input
+              #addMemberInput
+              type="text"
+              placeholder="Name..."
+              (input)="onChange(addMemberInput.value)"
+              [value]="newMemberName"
+            />
+          </div>
+          <button (click)="addMember()">Add</button>
+        </div>
+
+        <div class="generate-teams-container">
+          <input type="text" placeholder="# of teams" />
+          <button>Generate</button>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
 
+<!-- Stopped at  1:00:28 -->
