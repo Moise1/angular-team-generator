@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   newMemberName = '';
   members: string[] = [];
+  errorMsg = ''; 
 
   addMember(){ 
-    this.members.push(this.newMemberName);
-    this.newMemberName = '';
+    if(!this.newMemberName){
+      this.errorMsg = 'This field cannot be emtpy';
+      return;
+    }else {
+      this.errorMsg = '';
+      this.members.push(this.newMemberName);
+      this.newMemberName = '';
+    };
   };
 
   onChange(member: string){

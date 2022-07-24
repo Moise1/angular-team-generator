@@ -23,9 +23,9 @@
               [value]="newMemberName"
             />
           </div>
+          <p *ngIf="errorMsg" class="error-msg">{{errorMsg}}.</p>
           <button (click)="addMember()">Add</button>
         </div>
-
         <div class="generate-teams-container">
           <input type="text" placeholder="# of teams" />
           <button>Generate</button>
@@ -35,4 +35,3 @@
   </body>
 </html>
 
-<!-- Stopped at  1:00:28 -->
